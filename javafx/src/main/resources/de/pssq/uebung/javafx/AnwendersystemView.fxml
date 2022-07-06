@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+   fx:controller="de.pssq.uebung.javafx.control.AnwendersystemControl">
+   <center>
+      <Pane prefHeight="240.0" prefWidth="480.0" BorderPane.alignment="CENTER" style="-fx-background-color: white;">
+         <children>
+         	<Label text="Eingabe" style="-fx-font: BOLD 20 Tahoma;" layoutX="20.0" layoutY="50.0" />
+         	<Label text="Vorname" style="-fx-font: NORMAL 12 Tahoma;" layoutX="20.0" layoutY="90.0" />
+         	<TextField fx:id="txtVorname" layoutX="80.0" layoutY="90.0" />
+         	<Label text="Nachname" style="-fx-font: NORMAL 12 Tahoma;" layoutX="20.0" layoutY="140.0" />
+         	<TextField fx:id="txtNachname" layoutX="80.0" layoutY="140.0" />
+         	<Button text="Eingabe" onAction="#bearbeiteEingabe" layoutX="20.0" layoutY="180.0" />
+         	
+         	
+         	<Label text="Anzeige" style="-fx-font: BOLD 20 Tahoma;" layoutX="250.0" layoutY="50.0" />
+            <TableView fx:id="tblPersonen" layoutX="250.0" layoutY="90.0" 
+                prefHeight="110.0" prefWidth="202.0">
+               <columns>
+                  <TableColumn fx:id="clmnVorname" prefWidth="100.0" text="Vorname" />
+                  <TableColumn fx:id="clmnNachname" prefWidth="100.0" text="Nachname" />
+               </columns>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem  mnemonicParsing="false" 
+                           onAction="#loescheZeile" text="Löschen" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
